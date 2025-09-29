@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ISKAASHI SOLUTIONS — IT Solutions & Software Development</title>
+    <meta name="description" content="Iskaashi Solutions provides custom web, mobile, and business software development, digital transformation, and IT consulting in South Africa and beyond.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="ISKAASHI SOLUTIONS — IT Solutions & Software Development">
+    <meta property="og:description" content="Custom web, mobile, and business software development in South Africa">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./Images/iskaashi-logo.png">
+    <link rel="preload" href="Images/iskaashi-logo.png" as="image">
+</head>
+<body>
+    <!-- Full Site Video Background -->
+    <div class="fullsite-video-container">
+        <video class="fullsite-video" autoplay muted loop playsinline preload="metadata">
+            <source src="./Videos/abs_5.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="fullsite-overlay"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <a href="#" class="brand" aria-label="ISKAASHI SOLUTIONS Home">
+                <img src="./Images/iskaashi-logo.png" alt="ISKAASHI SOLUTIONS logo" width="84" height="84">
+                <div>
+                    <span class="site-title">ISKAASHI SOLUTIONS</span>
+                    <span class="site-tagline">IT Solutions, Web & Software Development</span>
+                </div>
+            </a>
+            <nav aria-label="Main navigation">
+                <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul id="nav-menu" class="nav-menu">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a class="btn-primary" href="#contact">Get a Quote</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero-content">
+                    <h1 id="hero-title">We build software that powers smarter businesses.</h1>
+                    <p class="muted">Custom web apps, mobile solutions, and digital transformation tailored for growth.</p>
+                    <div class="cta-group">
+                        <a class="btn-primary" href="#contact">Start a Project</a>
+                    </div>
+                </div>
+                <aside class="card" aria-label="What we do">
+                    <h2>What we do</h2>
+                    <p class="muted">We create software that helps businesses connect their data, improve decision-making, and manage operations smoothly.</p>
+                    <ul class="muted">
+                        <li>Web & Web App Development</li>
+                        <li>Mobile App Development (Android & iOS)</li>
+                        <li>Tailored Business Applications</li>
+                        <li>IT Consulting & Strategy</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section id="services" aria-labelledby="services-title">
+                <h2 id="services-title">Our Services</h2>
+                <div class="services-grid">
+                    <div class="service card">
+                        <h3>Web Development</h3>
+                        <p class="muted">Responsive, fast & accessible web applications.</p>
+                    </div>
+                    <div class="service card">
+                        <h3>Mobile App Development</h3>
+                        <p class="muted">Cross-platform mobile solutions.</p>
+                    </div>
+                    <div class="service card">
+                        <h3>Software Solutions</h3>
+                        <p class="muted">Business systems that scale.</p>
+                    </div>
+                    <div class="card service">
+                        <h3>IT Consulting</h3>
+                        <p class="muted">Architecture, cloud migration & integrations.</p>
+                    </div>
+                </div>
+            </section>
+            <br />
+            <br />
+
+            <section id="about" aria-labelledby="about-title">
+                <div class="card">
+                    <h2 id="about-title">About ISKAASHI SOLUTIONS</h2>
+                    <p class="muted">Iskaashi Solutions is a forward-thinking IT solutions provider. We empower businesses to optimise operations and elevate their digital presence.</p>
+                    <p class="muted"><strong>Vision:</strong> To be a top tech solutions provider in South Africa and beyond.</p>
+                    <p class="muted"><strong>Mission:</strong> To provide innovative, reliable, and scalable IT solutions that help businesses grow.</p>
+                </div>
+            </section>
+            <br />
+            <br />
+
+            <section id="contact" class="contact" aria-labelledby="contact-title">
+                <div class="card">
+                    <h2 id="contact-title">Get in touch</h2>
+                    <p class="muted">Fill out the form and we'll get back to you.</p>
+
+                    <form id="contactForm" action="https://formsubmit.co/iskaashisolutions@gmail.com" method="POST">
+                        <!-- Formsubmit Configuration -->
+                        <input type="hidden" name="_subject" value="New ISKAASHI Solutions Inquiry">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+
+                        <label>
+                            <span class="visually-hidden">Your name</span>
+                            <input type="text" name="name" placeholder="Your name" required autocomplete="name">
+                        </label>
+                        <label>
+                            <span class="visually-hidden">Email address</span>
+                            <input type="email" name="email" placeholder="Email address" required autocomplete="email">
+                        </label>
+                        <label>
+                            <span class="visually-hidden">Phone number (optional)</span>
+                            <input type="tel" name="phone" placeholder="Phone number (optional)" autocomplete="tel">
+                        </label>
+                        <label>
+                            <span class="visually-hidden">Select service</span>
+                            <select name="service" required>
+                                <option value="">Select service</option>
+                                <option>Web Development</option>
+                                <option>Mobile App Development</option>
+                                <option>Software Solutions</option>
+                                <option>IT Consulting</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span class="visually-hidden">Project details</span>
+                            <textarea name="message" rows="5" placeholder="Tell us about your project" required></textarea>
+                        </label>
+
+                        <div class="form-actions">
+                            <button type="submit" id="submit-btn">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+
+                <aside class="card">
+                    <h2>Contact Info</h2>
+                    <address>
+                        <span class="muted">ISKAASHI SOLUTIONS</span><br>
+                        <span class="muted">WhatsApp: <a href="https://wa.me/27658830687" rel="noopener" target="_blank">+27 65 883 0687</a></span><br>
+                        <span class="muted">Email: <a href="mailto:iskaashisolutions@gmail.com">iskaashisolutions@gmail.com</a></span><br>
+                        <span class="muted">Location: Pretoria, South Africa</span>
+                    </address>
+
+                    <div class="direct-contact">
+                        <h3>Direct Contact</h3>
+                        <p class="muted">Prefer to chat directly?</p>
+                        <a class="btn-primary whatsapp-btn" href="https://wa.me/27658830687" target="_blank">
+                            💬 Message on WhatsApp
+                        </a>
+                    </div>
+                </aside>
+            </section>
+        </main>
+
+        <footer>
+            <small>© ISKAASHI SOLUTIONS — All rights reserved.</small>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
