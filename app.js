@@ -68,13 +68,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // 3. CONTACT FORM - BOTH FORMSPREE AND WHATSAPP
+    // 3. CONTACT FORM - EMAILJS + WHATSAPP
     function initContactForm() {
+        const form = document.getElementById('contactForm');
         if (!form) return;
+
+        // Initialize EmailJS with YOUR Public Key
+        emailjs.init("YOUR_PUBLIC_KEY_HERE");
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
+            const submitBtn = document.getElementById('submit-btn');
             if (submitBtn) {
                 submitBtn.classList.add('loading');
                 submitBtn.textContent = 'Sending...';
@@ -82,31 +87,25 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             const formData = {
-                name: this.name.value,
-                email: this.email.value,
-                phone: this.phone.value,
-                service: this.service.value,
-                message: this.message.value
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value
             };
 
-            // 1. Submit to Formspree (email)
-            const formspreeForm = new FormData();
-            formspreeForm.append('name', formData.name);
-            formspreeForm.append('email', formData.email);
-            formspreeForm.append('phone', formData.phone);
-            formspreeForm.append('service', formData.service);
-            formspreeForm.append('message', formData.message);
-
-            fetch(form.action, {
-                method: 'POST',
-                body: formspreeForm,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    // Email sent successfully
-                }
+            // 1. Send email via EmailJS
+            emailjs.send("YOUR_SERVICE_ID_HERE", "YOUR_TEMPLATE_ID_HERE", {
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone || 'Not provided',
+                service: formData.service,
+                message: formData.message,
+                time: new Date().toLocaleString()
+            }).then(function (response) {
+                console.log('Email sent successfully!', response.status, response.text);
+            }, function (error) {
+                console.log('Email failed to send:', error);
             });
 
             // 2. Open WhatsApp with the same message
@@ -119,11 +118,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const whatsappMessage = `Hi, I'd like to enquire about your IT solutions.%0A%0A*Name:* ${name}%0A*Email:* ${email}${phone ? `%0A*Phone:* ${phone}` : ''}%0A*Service:* ${service}%0A*Message:* ${message}`;
             const whatsappURL = `https://wa.me/27658830687?text=${whatsappMessage}`;
 
-            // Open WhatsApp in new tab after a short delay
+            // Open WhatsApp after short delay
             setTimeout(() => {
                 window.open(whatsappURL, '_blank');
 
-                // Reset form and show success state
+                // Reset form and show success
                 form.reset();
                 if (submitBtn) {
                     submitBtn.classList.remove('loading');
@@ -131,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     submitBtn.style.background = 'var(--accent)';
                 }
 
-                // Reset button after 3 seconds
                 setTimeout(() => {
                     if (submitBtn) {
                         submitBtn.textContent = 'Send Message';
