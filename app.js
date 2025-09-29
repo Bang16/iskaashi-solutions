@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
             navToggle.setAttribute('aria-expanded', isOpen);
         });
 
-        // Close menu when clicking on links
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function () {
                 if (window.innerWidth <= 600 && navMenu.classList.contains('open')) {
@@ -28,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', function (e) {
             if (window.innerWidth <= 600 &&
                 navMenu.classList.contains('open') &&
@@ -52,13 +50,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (target) {
                     e.preventDefault();
 
-                    // Close mobile menu if open
                     if (window.innerWidth <= 600 && navMenu.classList.contains('open')) {
                         navMenu.classList.remove('open');
                         navToggle.setAttribute('aria-expanded', false);
                     }
 
-                    // Simple scroll to target
                     target.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
@@ -70,11 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 3. CONTACT FORM - EMAILJS + WHATSAPP
     function initContactForm() {
-        const form = document.getElementById('contactForm');
         if (!form) return;
 
         // Initialize EmailJS with YOUR Public Key
-        emailjs.init("YOUR_PUBLIC_KEY_HERE");
+        emailjs.init("Xn6HvytzLB8_mnhrV");
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -95,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             // 1. Send email via EmailJS
-            emailjs.send("YOUR_SERVICE_ID_HERE", "YOUR_TEMPLATE_ID_HERE", {
+            emailjs.send("iskaashi-gmail", "template_01rhhxf", {
                 name: formData.name,
                 email: formData.email,
                 phone: formData.phone || 'Not provided',
@@ -103,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 message: formData.message,
                 time: new Date().toLocaleString()
             }).then(function (response) {
-                console.log('Email sent successfully!', response.status, response.text);
+                console.log('Email sent successfully!');
             }, function (error) {
                 console.log('Email failed to send:', error);
             });
