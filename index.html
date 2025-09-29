@@ -104,25 +104,22 @@
                     <h2 id="contact-title">Get in touch</h2>
                     <p class="muted">Fill out the form and we'll get back to you.</p>
 
-                    <form id="contactForm" action="https://formsubmit.co/iskaashisolutions@gmail.com" method="POST">
-                        <!-- Required Formsubmit fields -->
-                        <input type="hidden" name="_subject" value="🚀 New ISKAASHI Inquiry">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://bang16.github.io/iskaashi-solutions">
-
-                        <!-- Form fields -->
+                    <form id="contactForm">
                         <label>
                             <span class="visually-hidden">Your name</span>
-                            <input type="text" name="name" placeholder="Your name" required>
+                            <input type="text" name="name" id="name" placeholder="Your name" required autocomplete="name">
                         </label>
                         <label>
                             <span class="visually-hidden">Email address</span>
-                            <input type="email" name="email" placeholder="Email address" required>
+                            <input type="email" name="email" id="email" placeholder="Email address" required autocomplete="email">
+                        </label>
+                        <label>
+                            <span class="visually-hidden">Phone number (optional)</span>
+                            <input type="tel" name="phone" id="phone" placeholder="Phone number (optional)" autocomplete="tel">
                         </label>
                         <label>
                             <span class="visually-hidden">Select service</span>
-                            <select name="service" required>
+                            <select name="service" id="service" required>
                                 <option value="">Select service</option>
                                 <option>Web Development</option>
                                 <option>Mobile App Development</option>
@@ -132,10 +129,13 @@
                         </label>
                         <label>
                             <span class="visually-hidden">Project details</span>
-                            <textarea name="message" rows="5" placeholder="Tell us about your project" required></textarea>
+                            <textarea name="message" id="message" rows="5" placeholder="Tell us about your project" required></textarea>
                         </label>
 
-                        <button type="submit">Send Message</button>
+                        <div class="form-actions">
+                            <button type="submit" id="submit-btn">Send Message</button>
+                            <p class="muted small">We'll email you and open WhatsApp to continue the conversation.</p>
+                        </div>
                     </form>
                 </div>
 
