@@ -105,22 +105,20 @@
                     <p class="muted">Fill out the form and we'll get back to you.</p>
 
                     <form id="contactForm" action="https://formsubmit.co/iskaashisolutions@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="New ISKAASHI Solutions Inquiry">
+                        <!-- Required Formsubmit fields -->
+                        <input type="hidden" name="_subject" value="🚀 New ISKAASHI Inquiry">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_next" value="https://bang16.github.io/iskaashi-solutions">
 
+                        <!-- Form fields -->
                         <label>
                             <span class="visually-hidden">Your name</span>
-                            <input type="text" name="name" placeholder="Your name" required autocomplete="name">
+                            <input type="text" name="name" placeholder="Your name" required>
                         </label>
                         <label>
                             <span class="visually-hidden">Email address</span>
-                            <input type="email" name="email" placeholder="Email address" required autocomplete="email">
-                        </label>
-                        <label>
-                            <span class="visually-hidden">Phone number (optional)</span>
-                            <input type="tel" name="phone" placeholder="Phone number (optional)" autocomplete="tel">
+                            <input type="email" name="email" placeholder="Email address" required>
                         </label>
                         <label>
                             <span class="visually-hidden">Select service</span>
@@ -137,9 +135,7 @@
                             <textarea name="message" rows="5" placeholder="Tell us about your project" required></textarea>
                         </label>
 
-                        <div class="form-actions">
-                            <button type="submit" id="submit-btn">Send Message</button>
-                        </div>
+                        <button type="submit">Send Message</button>
                     </form>
                 </div>
 
